@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snake — Arcade</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .board-wrap{ position:relative; }
+  canvas{
+    background:var(--paper);
+    border:2px solid var(--ink);
+    border-radius:8px;
+    box-shadow:5px 5px 0 var(--ink);
+    touch-action:none;
+    display:block;
+  }
+  .overlay-msg{
+    position:absolute;
+    inset:0;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    background:rgba(247,247,245,.94);
+    text-align:center;
+    padding:20px;
+    border-radius:8px;
+  }
+  .overlay-msg.show{ display:flex; }
+  .overlay-msg h2{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    margin:0;
+    font-size:1.3rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="game-header"><a class="back-link" href="../index.html">← Arcade</a></div>
+  <h1 class="game-title">Snake</h1>
+
+  <div class="game-stage">
+    <div class="hud">
+      <span>Score <strong id="score">0</strong></span>
+      <span>Best <strong id="best">0</strong></span>
+    </div>
+
+    <div class="board-wrap">
+      <canvas id="board" width="400" height="400"></canvas>
+      <div class="overlay-msg" id="overlayMsg">
+        <h2 id="overlayText">Game over</h2>
+        <button class="btn" id="restartBtn">Play again</button>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); font-size:.85rem;">Arrow keys or WASD to move. Space to pause.</p>
+  </div>
+</div>
+<script src="snake.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tic-Tac-Toe — Arcade</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .board-ttt{
+    display:grid;
+    grid-template-columns:repeat(3,90px);
+    grid-template-rows:repeat(3,90px);
+    gap:8px;
+    background:var(--ink);
+    padding:8px;
+    border-radius:10px;
+    border:2px solid var(--ink);
+    box-shadow:5px 5px 0 var(--ink);
+  }
+  .cell{
+    background:var(--paper);
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:2.2rem;
+    cursor:pointer;
+  }
+  .cell.win{ background:#f2ebe1; }
+  .cell:empty:hover{ background:var(--line); }
+  .status{
+    font-size:1rem;
+    margin:0;
+  }
+  @media (max-width:380px){
+    .board-ttt{ grid-template-columns:repeat(3,76px); grid-template-rows:repeat(3,76px); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="game-header"><a class="back-link" href="../index.html">← Arcade</a></div>
+  <h1 class="game-title">Tic-Tac-Toe</h1>
+
+  <div class="game-stage">
+    <p class="status" id="status">Player X's turn</p>
+    <div class="board-ttt" id="board"></div>
+    <button class="btn" id="restartBtn">New game</button>
+  </div>
+</div>
+<script src="tictactoe.js"></script>
+</body>
+</html>
