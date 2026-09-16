@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root{
+  --paper:#f7f7f5;
+  --ink:#17181c;
+  --muted:#6e6e68;
+  --line:#e3e3dd;
+  --radius:10px;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Space Grotesk',sans-serif;
+}
+
+a{ color:inherit; }
+
+.wrap{
+  max-width:980px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* --- landing page --- */
+
+.hero{
+  padding:72px 0 48px;
+}
+
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:600;
+  font-size:clamp(2.5rem,6vw,4rem);
+  margin:0 0 14px;
+  letter-spacing:-0.01em;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width:46ch;
+  margin:0;
+  line-height:1.55;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  padding-bottom:56px;
+}
+
+.cartridge{
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  color:var(--ink);
+  border:2px solid var(--ink);
+  border-radius:var(--radius);
+  background:var(--paper);
+  box-shadow:5px 5px 0 var(--ink);
+  transition:transform .15s ease, box-shadow .15s ease;
+  overflow:hidden;
+}
+
+.cartridge:hover{
+  transform:translate(-3px,-3px);
+  box-shadow:8px 8px 0 var(--ink);
+}
+
+.cartridge:focus-visible{
+  outline:3px solid var(--ink);
+  outline-offset:3px;
+}
+
+.cartridge-face{
+  height:104px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--tint);
+  border-bottom:2px solid var(--ink);
+}
+
+.cartridge-mark{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:700;
+  font-size:2.75rem;
+  color:var(--paper);
+  line-height:1;
+}
+
+.cartridge-body{
+  padding:18px 20px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  flex:1;
+}
+
+.cartridge-body h2{
+  margin:0;
+  font-size:1.15rem;
+  font-weight:600;
+}
+
+.cartridge-body p{
+  margin:0;
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.45;
+  flex:1;
+}
+
+.play{
+  margin-top:8px;
+  font-weight:600;
+  font-size:.85rem;
+}
+
+.cartridge:hover .play{
+  text-decoration:underline;
+}
+
+footer{
+  padding:28px 0 56px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.6;
+}
+
+footer a{
+  color:var(--ink);
+  text-decoration:underline;
+}
+
+/* --- game pages --- */
+
+.game-header{
+  padding:28px 0 4px;
+}
+
+.back-link{
+  text-decoration:none;
+  font-weight:500;
+  font-size:.9rem;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:2px;
+}
+
+.game-title{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:600;
+  font-size:1.9rem;
+  margin:6px 0 8px;
+}
+
+.game-stage{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  padding:12px 0 64px;
+}
+
+.hud{
+  display:flex;
+  gap:24px;
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+.hud strong{ color:var(--ink); }
+
+.btn{
+  border:2px solid var(--ink);
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;
+  font-size:.9rem;
+  padding:10px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  box-shadow:3px 3px 0 var(--ink);
+  transition:transform .1s ease, box-shadow .1s ease;
+}
+
+.btn:hover{
+  transform:translate(-2px,-2px);
+  box-shadow:5px 5px 0 var(--ink);
+}
+
+.btn:active{
+  transform:translate(0,0);
+  box-shadow:1px 1px 0 var(--ink);
+}
+
+@media (max-width:560px){
+  .hero{ padding:48px 0 36px; }
+}
